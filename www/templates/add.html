@@ -1,0 +1,24 @@
+{% extends "page.html" %}
+
+{% block page_title %}添加内容{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+  <h1>添加内容</h1>
+</div>
+<form class="form" role="form" method="post" action="/content/add">
+  <div class="form-group">
+    <label>标题</label>
+    <input type="text" class="form-control" name="title">
+  </div>
+  <div class="form-group">
+    <label>内容</label>
+    <input type="text" class="form-control" name="content">
+  </div>
+  <div class="form-group">
+    <label>标签</label>
+    <input type="text" class="form-control" name="tag">
+  </div>
+  <button type="submit" class="btn btn-default">添加</button>
+</form>
+{% endblock %}

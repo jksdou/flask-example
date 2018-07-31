@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block page_title %}账号注册{% endblock %}
+
+{% block nav_button %}<li><a href="/login">登陆</a></li>{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>账号注册{{ get_flashed_messages()[0] }}</h1>
+</div>
+<form class="form-horizontal" role="form" method="post" action="/register">
+    <div class="form-group">
+        <label for="firstname" class="col-sm-2 control-label">姓名</label>
+        <div class="col-sm-7">
+            <input type="text" class="form-control" id="firstname" placeholder="请输入用户名" name='username'>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="account" class="col-sm-2 control-label">账号</label>
+        <div class="col-sm-7">
+            <input type="text" class="form-control" id="account" placeholder="请输入用户名" name='account'>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastname" class="col-sm-2 control-label">密码</label>
+        <div class="col-sm-7">
+            <input type="password" class="form-control" id="lastname" placeholder="请输入密码" name='password'>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-1">
+            <button type="submit" class="btn btn-default">提交</button>
+        </div>
+    </div>
+</form>
+<h1>{{ get_flashed_messages()[0] }}</h1>
+{% endblock %}

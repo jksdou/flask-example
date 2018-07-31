@@ -1,0 +1,33 @@
+{% extends "page.html" %}
+
+{% block page_title %}内容列表{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>内容</h1>
+</div>
+<div class='content'>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>标题</th>
+        <th>内容</th>
+        <th>标签</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in page_context.list %}
+      <tr>
+        <td>{{ item['id'] }}</td>
+        <td>{{ item['title'] }}</td>
+        <td>{{ item['content'] }}</td>
+        <td>{{ item['tag'] }}</td>
+        <td>修改，删除，重置密码</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
